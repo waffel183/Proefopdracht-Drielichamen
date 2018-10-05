@@ -81,6 +81,47 @@ function init(){
   animation();
 }
 
+function checkVelocity(max){
+  if(PointA.vel.dx > max){
+    PointA.vel.dx = max;
+  }
+  else if(PointA.vel.dx < -max){
+    PointA.vel.dx = -max;
+  }
+  if(PointA.vel.dy > max){
+    PointA.vel.dy = max;
+  }
+  else if(PointA.vel.dy < -max){
+    PointA.vel.dy = -max;
+  }
+
+  if(PointB.vel.dx > max){
+    PointB.vel.dx = max;
+  }
+  else if(PointB.vel.dx < -max){
+    PointB.vel.dx = -max;
+  }
+  if(PointB.vel.dy > max){
+    PointB.vel.dy = max;
+  }
+  else if(PointB.vel.dy < -max){
+    PointB.vel.dy = -max;
+  }
+
+  if(PointC.vel.dx > max){
+    PointC.vel.dx = max;
+  }
+  else if(PointC.vel.dx < -max){
+    PointC.vel.dx = -max;
+  }
+  if(PointC.vel.dy > max){
+    PointC.vel.dy = max;
+  }
+  else if(PointC.vel.dy < -max){
+    PointC.vel.dy = -max;
+  }
+}
+
 function animation(){
   requestAnimationFrame(animation);
   context.clearRect(0,0,800,600);
@@ -89,6 +130,8 @@ function animation(){
   PointC.update();
   UpdateForce();
   Gravity(PointA,PointB,PointC,A_Force,B_Force,C_Force);
+
+  checkVelocity(25);
 
   clamp(PointA);
   clamp(PointB);
