@@ -56,26 +56,29 @@ function UpdateForce(){
 
   A_Force = new Vector2(-(Delta_AB.dx+Delta_AC.dx)/100,-(Delta_AB.dy+Delta_AC.dy)/100);
   B_Force = new Vector2(-(Delta_BA.dx+Delta_BC.dx)/100,-(Delta_BA.dy+Delta_BC.dy)/100);
-  C_Force = new Vector2(-(Delta_CA.dx+Delta_CB.dx)/100,-(Delta_CA.dy+Delta_CB.dy)/100)
+  C_Force = new Vector2(-(Delta_CA.dx+Delta_CB.dx)/100,-(Delta_CA.dy+Delta_CB.dy)/100);
 }
 
 function init(){
-  let Random_A_X = Math.floor(Math.random()*800);
-  let Random_A_Y = Math.floor(Math.random()*600);
-  PointA = new GameObject(new Point(Random_A_X,Random_A_Y,10,"blue","A"),
-                              new Vector2(Random_A_X,Random_A_Y),A_initVel,
+  let Random_X = Math.floor(Math.random()*800);
+  let Random_Y = Math.floor(Math.random()*600);
+  let Random_Vel = new Vector2(Math.floor(Math.random()*10),Math.floor(Math.random()*10));
+  PointA = new GameObject(new Point(Random_X,Random_Y,10,"blue","A"),
+                              new Vector2(Random_X,Random_Y),Random_Vel,
                               A_initAcc,1);
 
-  let Random_B_X = Math.floor(Math.random()*800);
-  let Random_B_Y = Math.floor(Math.random()*600);
-  PointB = new GameObject(new Point(Random_B_X,Random_B_Y,10,"red","B"),
-                          new Vector2(Random_B_X,Random_B_Y),B_initVel,
+  Random_X = Math.floor(Math.random()*800);
+  Random_Y = Math.floor(Math.random()*600);
+  Random_Vel = new Vector2(Math.floor(Math.random()*10),Math.floor(Math.random()*10));
+  PointB = new GameObject(new Point(Random_X,Random_Y,10,"red","B"),
+                          new Vector2(Random_X,Random_Y),Random_Vel,
                           B_initAcc,1);
 
-  let Random_C_X = Math.floor(Math.random()*800);
-  let Random_C_Y = Math.floor(Math.random()*600);
-  PointC = new GameObject(new Point(Random_C_X,Random_C_Y,10,"green","C"),
-                          new Vector2(Random_C_X,Random_C_Y),C_initVel,
+  Random_X = Math.floor(Math.random()*800);
+  Random_Y = Math.floor(Math.random()*600);
+  Random_Vel = new Vector2(Math.floor(Math.random()*10),Math.floor(Math.random()*10));
+  PointC = new GameObject(new Point(Random_X,Random_Y,10,"green","C"),
+                          new Vector2(Random_X,Random_Y),Random_Vel,
                           C_initAcc,1);
 
   animation();
